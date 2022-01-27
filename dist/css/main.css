@@ -79,12 +79,25 @@ body {
 /* 2. Content ================================= */
 .slideshow {
   width: 100%;
+  position: relative;
 }
 .slideshow img {
   width: 100%;
-  display: none;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 1s ease-in-out;
 }
 .slideshow img.show {
-  display: block;
+  opacity: 1;
+}
+
+.buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 600px;
+}
+.buttons .next {
+  margin-left: 50px;
 }
 /*# sourceMappingURL=main.css.map */
