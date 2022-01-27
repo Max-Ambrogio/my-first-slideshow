@@ -14,7 +14,9 @@ TABLE OF CONTENTS:
 */
 
 /* 0. Reset ================================= */
+@use 'mixins';
 @import 'reset';
+
 
 /* 1. Main Layout ================================= */
 
@@ -27,31 +29,94 @@ body {
 }
 
 /* 2. Content ================================= */
-
-.slideshow {
-	width: 100%;
-	position: relative;
-	
-	img{
+.slider{
+	height: 80%;
+	.slideshow {
 		width: 100%;
-		opacity: 0;
-		position: absolute;
-		transition: opacity 1s ease-in-out;
-	}
-	
-	img.show{
-		opacity: 1;
+		position: relative;
+		
+		img{
+			width: 100%;
+			opacity: 0;
+			position: absolute;
+			transition: opacity 1s ease-in-out;
+		}
+		
+		img.show{
+			opacity: 1;
+		}
 	}
 }
 
 .buttons{
+
+	@include mixins.bp-large{
+		display: block;
+		text-align: center;
+	}
+
+	@include mixins.bp-small{
+		display: none;
+	}
+
 	position: relative;
 	display: flex;
 	justify-content: center;
-	top: 600px;
+	align-items: flex-end;
+	top: 720px;
 
 	.next{
 		margin-left: 50px;
+		box-shadow:inset 0px 1px 0px 0px #fbafe3;
+		background:linear-gradient(to bottom, #ff5bb0 5%, #ef027d 100%);
+		background-color:#ff5bb0;
+		border-radius:6px;
+		border:1px solid #ee1eb5;
+		display:inline-block;
+		cursor:pointer;
+		color:#ffffff;
+		font-family:Arial;
+		font-size:15px;
+		font-weight:bold;
+		padding:6px 24px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #c70067;	
 	}
+	.next:hover {
+			background:linear-gradient(to bottom, #ef027d 5%, #ff5bb0 100%);
+			background-color:#ef027d;
+		}
+	.next:active {
+			position:relative;
+			top:1px;
+		}
+
+	.previous{
+		margin-left: 50px;
+		box-shadow:inset 0px 1px 0px 0px #fbafe3;
+		background:linear-gradient(to bottom, #ff5bb0 5%, #ef027d 100%);
+		background-color:#ff5bb0;
+		border-radius:6px;
+		border:1px solid #ee1eb5;
+		display:inline-block;
+		cursor:pointer;
+		color:#ffffff;
+		font-family:Arial;
+		font-size:15px;
+		font-weight:bold;
+		padding:6px 24px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #c70067;	
+	}
+	.previous:hover {
+			background:linear-gradient(to bottom, #ef027d 5%, #ff5bb0 100%);
+			background-color:#ef027d;
+		}
+	.previous:active {
+			position:relative;
+			top:1px;
+		}
+	
+	
 	
 }
